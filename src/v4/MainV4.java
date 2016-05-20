@@ -55,6 +55,8 @@ public class MainV4 {
 				System.out.println("Do you wish to view individual orders? If yes type 'Y' if no 'N'");
 				v_o = user_input.next();
 				user_input.close();
+				
+				
 				if (v_o.equals("y") || v_o.equals("Y"))  {
 								
 				CustomersV4 connectcust = new CustomersV4();

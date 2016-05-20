@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Scanner;
 
 
 public class CustomersV4 {
@@ -40,13 +41,42 @@ public class CustomersV4 {
 
 		try {
 			// This will select the data from the table specified
-			String query = "select * from customer_order_list";
+			//String query = "select * from customer_order_list";
 			// result set, so returns the data from the stated query
-			rs = st.executeQuery(query);
+			//rs = st.executeQuery(query);
 
+			//
+			Scanner user_input = new Scanner(System.in);
+
+			String custid;
+		
+
+			System.out.println("Please enter the order ID: ");
+		
+			custid = user_input.next();
+		
+			
+			
+			 String queryid = "SELECT * FROM wotsapp.customer_order_list WHERE OrderID = ' " + custid + " ' ";
+	            rs = st.executeQuery(queryid);
+			
+			/**
+			
+			System.out.println(" Order ID: " + OrderID + " Status: " + Status + " Customer ID: " + CustomerID);
+			String update = "UPDATE wotsapp.order_list SET Status = ' " + u_s + " ' WHERE OrderID = ' " + o_n	+ " ' ";
+			st.executeUpdate(update);
+			
+			
+			
+			*/
+			
 			System.out.println("Customer Order");
 
 			System.out.println("Line ID: " + " Order ID: " + " Item ID: " + " Pourous Ware: " + " Quantity: ");
+			
+			
+			
+			user_input.close();
 			
 			// this while loop stats that while there are records in the results
 			// sect, (rs), it will do the action

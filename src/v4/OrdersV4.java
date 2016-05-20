@@ -81,7 +81,7 @@ public class OrdersV4 {
 						
 			Statement st = con.createStatement();
 
-			String update = "UPDATE wotsapp.order_list SET Status = ' " + u_s + " ' WHERE OrderID = ' " + o_n	+ " ' ";
+			String update = "UPDATE wotsapp.customer_order_list SET Status = ' " + u_s + " ' WHERE OrderID = ' " + o_n	+ " ' ";
 			st.executeUpdate(update);
 		
 		} catch (Exception ex) {
